@@ -1,6 +1,5 @@
-import css from './User.module.css'
+import css from './User.module.css';
 import PropTypes from 'prop-types';
-
 
 const User = ({ items }) => {
   return (
@@ -32,22 +31,22 @@ const User = ({ items }) => {
   );
 };
 
-export default User;
-
 User.defaultProps = {
-  items: [],
+  items: {},
 };
 
 User.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
+  items: PropTypes.shape({
+    username: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    avatar: PropTypes.string,
+    stats: PropTypes.shape({
       followers: PropTypes.number,
       views: PropTypes.number,
       likes: PropTypes.number,
-    })
-  ),
+    }),
+  }),
 };
+
+export default User;
